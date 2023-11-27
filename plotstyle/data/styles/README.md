@@ -1,0 +1,1 @@
+The styles are taken from `garrettj403`'s fantastic [scienceplots](https://github.com/garrettj403/SciencePlots) repo.
