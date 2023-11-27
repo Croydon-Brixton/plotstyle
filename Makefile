@@ -15,3 +15,7 @@ run-checks :
 build :
 	rm -rf *.egg-info/
 	python -m build
+
+.PHONY : dev
+dev :
+	pip install -e ".[dev]"
