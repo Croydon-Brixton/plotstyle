@@ -18,4 +18,4 @@ build :
 
 .PHONY : dev
 dev :
-	pip install -e ".[dev]"
+	pip install -e ".[dev,extra]"

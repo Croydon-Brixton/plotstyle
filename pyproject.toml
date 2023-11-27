@@ -56,6 +56,9 @@ dev = [
     "sphinx-autodoc-typehints==1.23.3",
     "packaging"
 ]
+extra = [
+    "adjustText>=0.8.0",
+]
 
 [tool.setuptools.packages.find]
 exclude = [
