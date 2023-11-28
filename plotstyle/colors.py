@@ -14,34 +14,19 @@ __all__ = [
 
 class Colors:
     def __init__(self, colors: list[str] | dict[str, str] | str) -> None:
-        if isinstance(colors, str):
-            if colors.endswith(".json"):
-                self.colors = self.from_json(colors).colors
-            elif colors.endswith(".yaml"):
-                self.colors = self.from_yaml(colors).colors
-            else:
-                raise ValueError(f"Unrecognized file extension for {colors}.")
-        elif isinstance(colors, dict):
+        if isinstance(colors, dict):
             self.colors = colors
         elif isinstance(colors, list):
-            self.colors = {i: color for i, color in enumerate(colors)}
+            self.colors = {str(i): color for i, color in enumerate(colors)}
         else:
             raise ValueError(f"Unrecognized type {type(colors)} for colors.")
-
-    @classmethod
-    def from_list(cls, colors: list[str]) -> Colors:
-        return cls.from_dict({i: color for i, color in enumerate(colors)})
-
-    @classmethod
-    def from_dict(cls, colors: dict[str, str]) -> Colors:
-        return cls(colors)
 
     @classmethod
     def from_json(cls, json_file: str) -> Colors:
         import json
 
         with open(json_file, "r") as f:
-            colors = json.load(f)
+            colors: dict[str, str] = json.load(f)
         return cls(colors)
 
     @classmethod
@@ -49,7 +34,7 @@ class Colors:
         import yaml
 
         with open(yaml_file, "r") as f:
-            colors = yaml.load(f, Loader=yaml.FullLoader)
+            colors: dict[str, str] = yaml.load(f, Loader=yaml.FullLoader)
         return cls(colors)
 
     def __len__(self) -> int:
@@ -84,11 +69,10 @@ class Colors:
                 )
             elif key == len(self.colors):
                 # Add a new color
-                self.colors[key] = value
+                key = str(key)
             else:
                 # Update an existing color
                 key = self._idx_to_color_key(key)
-                self.colors[key] = value
         self.colors[key] = value
 
     def __add__(self, other: Colors) -> Colors:
