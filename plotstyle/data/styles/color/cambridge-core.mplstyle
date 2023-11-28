@@ -1,0 +1,5 @@
+# University of Cambrige "core" color scheme
+# from: https://www.cam.ac.uk/system/files/guidelines_v8_december_2019.pdf#page=17
+
+# Set color cycle
+axes.prop_cycle : cycler('color', ['D50032', '0072CE', 'E87722', '64A70B', '93328E', '00B0B9'])
