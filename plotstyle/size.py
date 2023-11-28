@@ -60,6 +60,11 @@ class WIDTH:
     science_2column: float = 12.1 * convert_unit("cm", "pt")
     science_3column: float = 18.4 * convert_unit("cm", "pt")
 
+    # Powerpoint
+    # https://support.microsoft.com/en-us/office/change-the-size-of-your-slides-040a811c-be43-40b9-8d04-0de5ed79987e#:~:text=9%20aspect%20ratios%3A-,On%2Dscreen%20Show%20(16%3A9)%20sets%20the%20slide,13.333%20in%20x%207.5%20in.)
+    powerpoint_standard: float = 10.0 * convert_unit("in", "pt")
+    powerpoint_widescreen: float = 13.333 * convert_unit("in", "pt")
+
 
 def get_dim(
     width: float = WIDTH.latex_default_article,
