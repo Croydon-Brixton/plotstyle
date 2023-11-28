@@ -74,7 +74,7 @@ exclude = [
 include-package-data = true
 
 [tool.setuptools.package-data]
-plotstyle = ["py.typed"]
+plotstyle = ["py.typed", "data/*"]
 
 [tool.setuptools.dynamic]
 version = {attr = "plotstyle.version.VERSION"}
