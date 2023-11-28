@@ -36,22 +36,27 @@ def convert_unit(from_unit: str, to_unit: str) -> float:
 
 @dataclass
 class WIDTH:
-    # Determined via: https://tex.stackexchange.com/a/39384
     #  all textwidths measured in pt
     _units: str = "pt"
+
     # Latex default
+    # ... determined via: https://tex.stackexchange.com/a/39384
     latex_default_article: float = 345.0
+
     # Cambridge thesis guidelines
     mres_report: float = 398.3386
     phd_thesis: float = 455.24411
+
     # Machine learning conference guidelines
     neurips_article: float = 397.48499
+
     # https://www-nature-com.ezp.lib.cam.ac.uk/nature/for-authors/final-submission
     nature_column: float = 89.0 * convert_unit("mm", "pt")
     nature_2column: float = 183.0 * convert_unit("mm", "pt")
     nature_page: float = 247.0 * convert_unit("mm", "pt")
+
     # https://www.science.org/content/page/instructions-preparing-initial-manuscript
-    science_column: 5.7 * convert_unit("cm", "pt")
+    science_column: float = 5.7 * convert_unit("cm", "pt")
     science_2column: float = 12.1 * convert_unit("cm", "pt")
     science_3column: float = 18.4 * convert_unit("cm", "pt")
 
