@@ -1,12 +1,13 @@
-from .version import VERSION, VERSION_SHORT
-from .constants import PLOTSTYLE_DATA_DIR, PLOTSTYLE_DIR
-
 from os import listdir
 from os.path import isdir, join
 
 import matplotlib.pyplot as plt
+
+from .constants import PLOTSTYLE_DATA_DIR, PLOTSTYLE_DIR
+from .version import VERSION, VERSION_SHORT
+
 # register the included stylesheet in the matplotlib style library
-styles_path = join(PLOTSTYLE_DATA_DIR, 'styles')
+styles_path = join(PLOTSTYLE_DATA_DIR, "styles")
 
 # Reads styles in /styles
 stylesheets = plt.style.core.read_style_directory(styles_path)

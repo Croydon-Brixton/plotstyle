@@ -2,7 +2,7 @@ import os
 
 # Path to the plotstyle directory
 PLOTSTYLE_DIR = os.path.dirname(os.path.abspath(__file__))
-PLOTSTYLE_DATA_DIR = os.path.join(PLOTSTYLE_DIR, 'data')
+PLOTSTYLE_DATA_DIR = os.path.join(PLOTSTYLE_DIR, "data")
 
 # Constants for unit conversions
 INCH_TO_CM = 2.54
