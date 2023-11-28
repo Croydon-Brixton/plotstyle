@@ -46,14 +46,10 @@ def save_timestamped_figure(
         if fig is None:
             plt.savefig(
                 f"{name}_{timestamp}.{file_type}",
-                bbox_inches="tight",
-                pad_inches=0.04,
                 **savefig_kwargs,
             )
         else:
             fig.savefig(
                 f"{name}_{timestamp}.{file_type}",
-                bbox_inches="tight",
-                pad_inches=0.04,
                 **savefig_kwargs,
             )
