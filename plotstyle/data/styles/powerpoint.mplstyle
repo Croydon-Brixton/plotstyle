@@ -1,0 +1,36 @@
+# TODO# Matplotlib style for Powerpoint presentations
+
+# Set default figure size
+figure.figsize : 8, 6
+
+# Set x axis
+xtick.major.size : 6
+xtick.major.width : 1
+xtick.minor.size : 3
+xtick.minor.width : 1
+
+# Set y axis
+ytick.major.size : 6
+ytick.major.width : 1
+ytick.minor.size : 3
+ytick.minor.width : 1
+
+# Fontsizes
+xtick.labelsize : 12
+ytick.labelsize : 12
+legend.fontsize : 12
+legend.title_fontsize : 12
+axes.titlesize : 12
+axes.labelsize : 12
+
+# Set line widths
+axes.linewidth : 1
+grid.linewidth : 1
+lines.linewidth : 2.
+
+# Use sans-serif fonts
+font.family : sans-serif
+mathtext.fontset : dejavusans
+
+# Use LaTeX for math formatting
+text.usetex : False

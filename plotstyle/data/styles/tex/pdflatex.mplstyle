@@ -1,0 +1,5 @@
+# Use pdflatex as Latex compiler
+
+# Use LaTeX for math formatting
+text.usetex : True
+pgf.texsystem: pdflatex

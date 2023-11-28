@@ -24,8 +24,8 @@ lines.linewidth : 1.
 lines.markersize: 3
 
 # Always save as 'tight'
-# savefig.bbox : tight
-# savefig.pad_inches : 0.01  # Use virtually all space when we specify figure dimensions
+savefig.bbox : tight
+savefig.pad_inches : 0.01  # Use virtually all space when we specify figure dimensions
 
 # LaTeX packages
 text.latex.preamble : \usepackage{amsmath} \usepackage{amssymb} \usepackage{sfmath}
