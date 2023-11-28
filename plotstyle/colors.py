@@ -29,28 +29,28 @@ class Colors:
             raise ValueError(f"Unrecognized type {type(colors)} for colors.")
 
     @classmethod
-    def from_list(colors: list[str]) -> Colors:
-        return Colors.from_dict({i: color for i, color in enumerate(colors)})
+    def from_list(cls, colors: list[str]) -> Colors:
+        return cls.from_dict({i: color for i, color in enumerate(colors)})
 
     @classmethod
-    def from_dict(colors: dict[str, str]) -> Colors:
-        return Colors(colors)
+    def from_dict(cls, colors: dict[str, str]) -> Colors:
+        return cls(colors)
 
     @classmethod
-    def from_json(json_file: str) -> Colors:
+    def from_json(cls, json_file: str) -> Colors:
         import json
 
         with open(json_file, "r") as f:
             colors = json.load(f)
-        return Colors(colors)
+        return cls(colors)
 
     @classmethod
-    def from_yaml(yaml_file: str) -> Colors:
+    def from_yaml(cls, yaml_file: str) -> Colors:
         import yaml
 
         with open(yaml_file, "r") as f:
             colors = yaml.load(f, Loader=yaml.FullLoader)
-        return Colors(colors)
+        return cls(colors)
 
     def __len__(self) -> int:
         return len(self.colors)
@@ -61,9 +61,13 @@ class Colors:
 
     def _idx_to_color_key(self, idx: int) -> str:
         if idx >= len(self.colors):
-            raise IndexError(f"Index {idx} is out of bounds. The color palette has {len(self.colors)} colors.")
+            raise IndexError(
+                f"Index {idx} is out of bounds. The color palette has {len(self.colors)} colors."
+            )
         elif idx < (-1 * len(self.colors)):
-            raise IndexError(f"Index {idx} is out of bounds. The color palette has {len(self.colors)} colors.")
+            raise IndexError(
+                f"Index {idx} is out of bounds. The color palette has {len(self.colors)} colors."
+            )
         key = self.names[idx]
         return key
 
@@ -75,7 +79,9 @@ class Colors:
     def __setitem__(self, key: str | int, value: str):
         if isinstance(key, int):
             if key > len(self.colors):
-                raise IndexError(f"Index {key} is out of bounds. The color palette has {len(self.colors)} colors.")
+                raise IndexError(
+                    f"Index {key} is out of bounds. The color palette has {len(self.colors)} colors."
+                )
             elif key == len(self.colors):
                 # Add a new color
                 self.colors[key] = value
@@ -91,7 +97,7 @@ class Colors:
     def to_cycler(self, **kwargs) -> plt.cycler:
         return plt.cycler(color=self.colors.values(), **kwargs)
 
-    def to_palette(self, **kwargs) -> list[str]:
+    def to_palette(self, **kwargs) -> sns.Palette:
         return sns.color_palette(list(self.colors.values()), **kwargs)
 
     def to_rgb_list(self) -> list[tuple[float, float, float]]:

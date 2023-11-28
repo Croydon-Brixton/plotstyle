@@ -24,7 +24,9 @@ def save_timestamped_figure(
     # check that all file types are valid
     for file_type in file_types:
         if file_type not in _VALID_EXTENSIONS:
-            raise ValueError(f"Unrecognized file type {file_type}. Valid file types are {_VALID_EXTENSIONS}.")
+            raise ValueError(
+                f"Unrecognized file type {file_type}. Valid file types are {_VALID_EXTENSIONS}."
+            )
 
     # if save_dir is given, check that the name is not an absolute path
     if save_dir:
