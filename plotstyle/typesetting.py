@@ -4,6 +4,8 @@ from distutils.spawn import find_executable
 
 import matplotlib.pyplot as plt
 
+__all__ = ["latex_is_available", "use_tex"]
+
 
 def latex_is_available() -> bool:
     """Returns True if latex is available on the system."""
