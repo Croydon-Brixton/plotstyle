@@ -41,14 +41,16 @@ class WIDTH:
 
     # Latex default
     # ... determined via: https://tex.stackexchange.com/a/39384
-    latex_default_article: float = 345.0
+    latex_default_article: float = 345.0  # pt
 
     # Cambridge thesis guidelines
-    mres_report: float = 398.3386
-    phd_thesis: float = 455.24411
+    mres_report: float = 398.3386  # pt
+    phd_thesis: float = 455.24411  # pt
 
     # Machine learning conference guidelines
-    neurips_article: float = 397.48499
+    neurips_textwidth: float = 397.48499  # pt
+    iclr_textwidth: float = 397.48499  # pt
+    iclr_pagewidth: float = 614.295  # pt
 
     # https://www-nature-com.ezp.lib.cam.ac.uk/nature/for-authors/final-submission
     nature_column: float = 89.0 * convert_unit("mm", "pt")
