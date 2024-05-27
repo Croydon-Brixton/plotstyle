@@ -52,6 +52,7 @@ def save_timestamped_figure(
 
     # if save_dir is given, check that the name is not an absolute path
     if save_dir:
+        os.makedirs(save_dir, exist_ok=True)
         if os.path.isabs(name):
             raise ValueError("If `save_dir` is given, name must be a relative path.")
         # Turn the name into an absolute path
