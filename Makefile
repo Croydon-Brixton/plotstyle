@@ -13,9 +13,8 @@ run-checks :
 
 .PHONY : format
 format :
-	isort .
-	black .
 	ruff format .
+	ruff check --fix .
 
 .PHONY : build
 build :
