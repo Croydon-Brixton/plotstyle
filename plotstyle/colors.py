@@ -46,13 +46,9 @@ class Colors:
 
     def _idx_to_color_key(self, idx: int) -> str:
         if idx >= len(self.colors):
-            raise IndexError(
-                f"Index {idx} is out of bounds. The color palette has {len(self.colors)} colors."
-            )
+            raise IndexError(f"Index {idx} is out of bounds. The color palette has {len(self.colors)} colors.")
         elif idx < (-1 * len(self.colors)):
-            raise IndexError(
-                f"Index {idx} is out of bounds. The color palette has {len(self.colors)} colors."
-            )
+            raise IndexError(f"Index {idx} is out of bounds. The color palette has {len(self.colors)} colors.")
         key = self.names[idx]
         return key
 
@@ -64,9 +60,7 @@ class Colors:
     def __setitem__(self, key: str | int, value: str):
         if isinstance(key, int):
             if key > len(self.colors):
-                raise IndexError(
-                    f"Index {key} is out of bounds. The color palette has {len(self.colors)} colors."
-                )
+                raise IndexError(f"Index {key} is out of bounds. The color palette has {len(self.colors)} colors.")
             elif key == len(self.colors):
                 # Add a new color
                 key = str(key)
