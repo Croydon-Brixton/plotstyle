@@ -33,7 +33,7 @@ Changelog = "https://github.com/Croydon-Brixton/plotstyle/blob/main/CHANGELOG.md
 
 [project.optional-dependencies]
 dev = [
-    "ruff==0.4.5",
+    "ruff==0.4.9",
     "mypy>=1.0,<1.5",
     "pytest",
     "pytest-sphinx",
